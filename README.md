@@ -18,5 +18,5 @@ curl -s https://raw.githubusercontent.com/quero-edu/quero-kafka/master/setup.sh 
 # Using Kafka locally
 To start Kafka environment (Kafka + ZooKeeper), just run from any path:
 ```
-kafka-up
+kafkaup
 ``` 
