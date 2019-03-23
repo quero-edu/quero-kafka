@@ -12,7 +12,7 @@ dependencies for running Kafka locally. In addition, the setup:
 To install this Kafka, just run:
 
 ``` 
-wget https://github.com/quero-edu/quero-kafka/setup.sh | sudo bash -s
+curl -s https://raw.githubusercontent.com/quero-edu/quero-kafka/master/setup.sh | bash -s
 ```
 
 # Using Kafka locally
