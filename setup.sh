@@ -11,10 +11,10 @@ mkdir -p $HOME/.kafka
 cd $HOME/.kafka
 git clone https://github.com/quero-edu/quero-kafka.git
 cd $HOME/.kafka/quero-kafka
-chmod +x kafka-up
+chmod +x kafkaup
 
 echo "Adding executable to path..."
-grep -qxF '.kafka/quero-kafka' $HOME/.bashrc || echo "export PATH=\$PATH:$HOME/.kafka/quero-kafka" >>  $HOME/.bashrc
+grep -qxF 'quero-kafka' $HOME/.bashrc || echo "export PATH=\$PATH:$HOME/.kafka/quero-kafka" >>  $HOME/.bashrc
 source $HOME/.bashrc
 
 echo "Installing kafkacat..."
@@ -23,5 +23,5 @@ sudo apt-get -y install kafkacat
 echo "Configuring docker network"
 docker network create querobolsa_default || true
 
-echo "Done! Run 'kafka-up' and enjoy Kafka!"
+echo "Done! Run 'kafkaup' and enjoy Kafka!"
 
