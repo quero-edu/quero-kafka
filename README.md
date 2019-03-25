@@ -9,14 +9,14 @@ dependencies for running Kafka locally. In addition, the setup:
   - Configure a startup script, so you can easily start Kafka from any path on your system. 
 
 # Installing
-To install this Kafka, just run:
+To install the environment, just run:
 
 ``` 
 curl -s https://raw.githubusercontent.com/quero-edu/quero-kafka/master/setup.sh | bash -s
 ```
 
 # Running
-To start Kafka environment (Kafka + ZooKeeper), just run from any path:
+To start the Kafka environment (Kafka + ZooKeeper), just run it from any path:
 ```
 kafkaup
 ``` 
