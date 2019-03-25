@@ -16,6 +16,12 @@ chmod +x kafkaup
 echo "Adding executable to path..."
 grep -qxF 'quero-kafka' $HOME/.bashrc || echo "export PATH=\$PATH:$HOME/.kafka/quero-kafka" >>  $HOME/.bashrc
 source $HOME/.bashrc
+if [[ -e .zshrc ]]
+then
+  grep -qxF 'quero-kafka' $HOME/.zshrc || echo "export PATH=\$PATH:$HOME/.kafka/quero-kafka" >>  $HOME/.zshrc
+  source $HOME/.zshrc
+fi
+
 
 echo "Installing kafkacat..."
 sudo apt-get -y install kafkacat
