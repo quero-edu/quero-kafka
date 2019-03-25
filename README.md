@@ -15,8 +15,11 @@ To install the environment, just run:
 curl -s https://raw.githubusercontent.com/quero-edu/quero-kafka/master/setup.sh | bash -s
 ```
 
+**NOTE**: you don't need to clone this repo!
+
 # Running
 To start the Kafka environment (Kafka + ZooKeeper), just run it from any path:
 ```
 kafkaup
 ``` 
+**NOTE**: if you use other shells besides bash (zsh, for example), you will need to start another shell to be able to run `kafkaup`.
