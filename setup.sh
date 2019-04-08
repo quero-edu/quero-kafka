@@ -30,15 +30,15 @@ fi
 
 #!/usr/bin/env bash
 
-echo "Adding DATA_PATH variable"
+echo "Adding KAFKA_DATA_PATH variable"
 
 if [ "$is_mac" = true ]; then
-  echo "export DATA_PATH=/private/var/data" >>  $HOME/.bashrc
+  echo "export KAFKA_DATA_PATH=/private/var/data" >>  $HOME/.bashrc
   if [[ -e $HOME/.zshrc ]]; then
-    echo "export DATA_PATH=/private/var/data" >>  $HOME/.zshrc
+    echo "export KAFKA_DATA_PATH=/private/var/data" >>  $HOME/.zshrc
   fi
 else
-    echo "export DATA_PATH=/var/data" >>  $HOME/.bashrc
+    echo "export KAFKA_DATA_PATH=/var/data" >>  $HOME/.bashrc
 fi
 
 echo "rebuild bashrc"
