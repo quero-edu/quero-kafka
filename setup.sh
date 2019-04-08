@@ -3,6 +3,7 @@ set -e
 
 is_mac=false
 if [ "$(uname)" == "Darwin" ]; then
+  echo 'mac variable set'
   is_mac=true
 fi
 
@@ -31,7 +32,7 @@ fi
 
 echo "Adding DATA_PATH variable"
 
-if [ is_mac ]; then
+if [ "$is_mac" = true ]; then
   echo "export DATA_PATH=/private/var/data" >>  $HOME/.bashrc
   if [[ -e $HOME/.zshrc ]]; then
     echo "export DATA_PATH=/private/var/data" >>  $HOME/.zshrc
@@ -46,7 +47,7 @@ source $HOME/.bashrc
 
 
 echo "Installing kafkacat..."
-if [ is_mac ]; then
+if [ "$is_mac" = true ]; then
   brew install kafkacat
 else
   sudo apt-get -y install kafkacat
