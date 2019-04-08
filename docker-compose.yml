@@ -31,4 +31,4 @@ services:
     links:
       - zookeeper:zookeeper
     volumes:
-      - /var/data/kafka:/var/lib/kafka/data
+      - $KAFKA_DATA_PATH/kafka:/var/lib/kafka/data
