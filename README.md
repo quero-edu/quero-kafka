@@ -22,4 +22,3 @@ To start the Kafka environment (Kafka + ZooKeeper), just run it from any path:
 ```
 kafkaup
 ``` 
-**NOTE**: if you use other shells besides bash (zsh, for example), you will need to start another shell to be able to run `kafkaup`.

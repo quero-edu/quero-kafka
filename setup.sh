@@ -23,9 +23,9 @@ chmod +x kafkaup
 echo "Adding executable to path..."
 grep 'quero-kafka' $HOME/.bashrc || echo "export PATH=\$PATH:$HOME/.kafka/quero-kafka" >>  $HOME/.bashrc
 
-if [[ -e $HOME/.zshrc ]]
-then
+if [[ -e $HOME/.zshrc ]]; then
   grep 'quero-kafka' $HOME/.zshrc || echo "export PATH=\$PATH:$HOME/.kafka/quero-kafka" >>  $HOME/.zshrc
+  source $HOME/.zshrc
 fi
 
 #!/usr/bin/env bash
@@ -34,17 +34,23 @@ echo "Adding KAFKA_DATA_PATH variable"
 
 if [ "$is_mac" = true ]; then
   echo "export KAFKA_DATA_PATH=/private/var/data" >>  $HOME/.bashrc
+
   if [[ -e $HOME/.zshrc ]]; then
     echo "export KAFKA_DATA_PATH=/private/var/data" >>  $HOME/.zshrc
+    source $HOME/.zshrc
   fi
 else
-    echo "export KAFKA_DATA_PATH=/var/data" >>  $HOME/.bashrc
+  echo "export KAFKA_DATA_PATH=/var/data" >>  $HOME/.bashrc
+
+  if [[ -e $HOME/.zshrc ]]; then
+    echo "export KAFKA_DATA_PATH=/var/data" >>  $HOME/.zshrc
+    source $HOME/.zshrc
+  fi
 fi
 
 echo "rebuild bashrc"
 
 source $HOME/.bashrc
-
 
 echo "Installing kafkacat..."
 if [ "$is_mac" = true ]; then
